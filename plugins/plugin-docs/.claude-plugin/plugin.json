@@ -1,0 +1,11 @@
+{
+  "name": "plugin-docs",
+  "version": "1.0.0",
+  "description": "Write client-facing documentation for a WordPress plugin, with real screenshots captured from a running site, in the StoreSuite docs format (MDX pages + meta.json + images).",
+  "author": {
+    "name": "Aminur Islam",
+    "url": "https://github.com/aminurislamarnob"
+  },
+  "repository": "https://github.com/aminurislamarnob/claude-plugins",
+  "keywords": ["wordpress", "documentation", "screenshots", "playwright"]
+}

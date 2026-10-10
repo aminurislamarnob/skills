@@ -1,0 +1,17 @@
+{
+  "name": "aminurislamarnob-plugins",
+  "owner": {
+    "name": "Aminur Islam",
+    "url": "https://github.com/aminurislamarnob"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for WordPress plugin development."
+  },
+  "plugins": [
+    {
+      "name": "plugin-docs",
+      "source": "./plugins/plugin-docs",
+      "description": "Write client-facing WordPress plugin docs with real screenshots, in the StoreSuite docs format."
+    }
+  ]
+}
