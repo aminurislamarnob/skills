@@ -49,3 +49,23 @@ Needs:
 - Node.js with [Playwright](https://playwright.dev) and Chromium
   (`npm i -D playwright && npx playwright install chromium`)
 - WP-CLI, for seeding demo content
+
+### wp-worktree
+
+Make WordPress local development environments compatible with git worktrees and concurrent AI agents (Claude Code, Cursor, Antigravity) on Laravel Herd.
+
+Provisions isolated HTTPS Herd domains (`https://<site>--<worktree>.test`), clones databases so migrations and tests don't collide across parallel agent sessions, and transparently wires `wp` commands inside worktrees.
+
+Install in Claude Code:
+```
+/plugin install wp-worktree@aminurislamarnob-plugins
+```
+
+Ask Claude to:
+- "Create a new worktree for feat-cart and spin up the WordPress environment"
+- "Adopt this worktree session with wp-worktree"
+
+Needs:
+- macOS with [Laravel Herd](https://herd.laravel.com/)
+- Git, Bash, and WP-CLI (`wp`)
+- MySQL / MariaDB (bundled with Herd)

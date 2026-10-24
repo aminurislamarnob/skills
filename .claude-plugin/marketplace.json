@@ -12,6 +12,11 @@
       "name": "plugin-docs",
       "source": "./plugins/plugin-docs",
       "description": "Write client-facing WordPress plugin docs with real screenshots, in the StoreSuite docs format."
+    },
+    {
+      "name": "wp-worktree",
+      "source": "./plugins/wp-worktree",
+      "description": "Make WordPress dev environments compatible with git worktrees and concurrent AI agents on Laravel Herd."
     }
   ]
 }
