@@ -1,0 +1,11 @@
+{
+  "name": "feature-video",
+  "version": "1.0.0",
+  "description": "Record a feature working in a real browser with Playwright, edit the takes into a captioned walkthrough video with HyperFrames, and narrate it with an ElevenLabs voice.",
+  "author": {
+    "name": "Aminur Islam",
+    "url": "https://github.com/aminurislamarnob"
+  },
+  "repository": "https://github.com/aminurislamarnob/claude-plugins",
+  "keywords": ["video", "screen-recording", "playwright", "hyperframes", "elevenlabs", "voiceover", "demo", "wordpress"]
+}

@@ -69,3 +69,45 @@ Needs:
 - macOS with [Laravel Herd](https://herd.laravel.com/)
 - Git, Bash, and WP-CLI (`wp`)
 - MySQL / MariaDB (bundled with Herd)
+
+### browser-walkthrough
+
+Checks a feature or PR end to end in your real Chrome (Claude in Chrome),
+screenshots every step, and publishes a private walkthrough page (an Artifact)
+with a short description per step and a list of what the run found.
+
+Install in Claude Code:
+```
+/plugin install browser-walkthrough@aminurislamarnob-plugins
+```
+
+Ask Claude to:
+- "Check PR #63 on the real browser, screenshot each step, and make an artifact with a short description for each"
+- "Verify the refund flow in Chrome and give me a walkthrough page"
+
+Needs:
+- the Claude in Chrome extension, connected to this session
+- a running site (local or staging) with test-mode credentials for any payment provider
+- Python 3, for building the page
+
+### feature-video
+
+Records a feature working in a real browser (Playwright, headed Chrome, with a
+visible cursor), edits the takes into a captioned walkthrough video with
+[HyperFrames](https://hyperframes.heygen.com), and narrates it with an
+ElevenLabs voice, one line per on-screen step.
+
+Install in Claude Code:
+```
+/plugin install feature-video@aminurislamarnob-plugins
+```
+
+Ask Claude to:
+- "Make a screen recording of the full checkout flow with HyperFrames"
+- "Record the current changes working in the browser and add an ElevenLabs voiceover"
+
+Needs:
+- Node.js 22+, FFmpeg, and [Playwright](https://playwright.dev) with Google Chrome or Chromium (`npm i -D playwright`)
+- HyperFrames (`npx hyperframes`)
+- the ElevenLabs connector with credits, for the voiceover (about two credits per character of script)
+- WP-CLI and `WP_PATH`, when takes log in as WordPress users

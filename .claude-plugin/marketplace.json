@@ -17,6 +17,16 @@
       "name": "wp-worktree",
       "source": "./plugins/wp-worktree",
       "description": "Make WordPress dev environments compatible with git worktrees and concurrent AI agents on Laravel Herd."
+    },
+    {
+      "name": "browser-walkthrough",
+      "source": "./plugins/browser-walkthrough",
+      "description": "Check a feature in the real browser, screenshot every step, and publish a step-by-step walkthrough page."
+    },
+    {
+      "name": "feature-video",
+      "source": "./plugins/feature-video",
+      "description": "Record a feature working in a real browser and turn it into a captioned, narrated video with HyperFrames and ElevenLabs."
     }
   ]
 }

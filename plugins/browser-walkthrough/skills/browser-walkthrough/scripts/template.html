@@ -1,0 +1,111 @@
+<title>{{TITLE}}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a run log. Header facts, a sticky section rail, then each section's steps as a two-up grid of screenshots with captions. */
+:root {
+  --bg: #f5f6f3;
+  --surface: #ffffff;
+  --fg: #1c2420;
+  --muted: #5f6b64;
+  --line: #dbe1dc;
+  --accent: #3b6a4c;
+  --accent-soft: #e3ede5;
+  --warn: #8a5a12;
+  --warn-soft: #f6ecd9;
+  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111513; --surface: #1a201d; --fg: #e3e9e5; --muted: #9aa69f; --line: #2c3530;
+    --accent: #8ec29d; --accent-soft: #1f2e24; --warn: #e2b46a; --warn-soft: #2e2618; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111513; --surface: #1a201d; --fg: #e3e9e5; --muted: #9aa69f; --line: #2c3530;
+  --accent: #8ec29d; --accent-soft: #1f2e24; --warn: #e2b46a; --warn-soft: #2e2618; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { padding-block: 40px 20px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.1; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.lede { margin: 0; max-width: 68ch; color: var(--muted); font-size: 16px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 6px 0 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+.facts b { color: var(--fg); font-weight: 600; }
+.facts code, .mono { font-family: var(--font-mono); font-size: 12.5px; }
+nav.rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.rail .wrap { display: flex; gap: 4px; overflow-x: auto; padding-block: 10px; scrollbar-width: none; }
+nav.rail a { flex: none; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; padding: 5px 10px; border-radius: 6px; }
+nav.rail a:hover, nav.rail a:focus-visible { color: var(--fg); background: var(--accent-soft); outline: none; }
+section { padding-block: 34px 8px; scroll-margin-top: 56px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 18px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.sec-head h2 { margin: 0; font-size: 21px; letter-spacing: -.005em; }
+.sec-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr)); gap: 26px 28px; }
+.step { margin: 0; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.shot { display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); cursor: zoom-in; }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 1223 / 627; object-fit: contain; object-position: center; }
+.shot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+figcaption { display: grid; gap: 6px; min-width: 0; }
+.cap-head { display: flex; align-items: baseline; gap: 10px; }
+.num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); font-weight: 500; font-variant-numeric: tabular-nums; }
+.cap-head h3 { margin: 0; font-size: 16px; font-weight: 600; }
+figcaption p { margin: 0; color: var(--muted); font-size: 14px; max-width: 64ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips:empty { display: none; }
+.chip { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.notes { margin-block: 40px 56px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); display: grid; gap: 10px; }
+.notes h2 { margin: 0; font-size: 17px; }
+.notes ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.notes li b { color: var(--fg); font-weight: 600; }
+.tag { font-family: var(--font-mono); font-size: 11px; padding: 0 6px; border-radius: 4px; background: var(--warn-soft); color: var(--warn); margin-right: 6px; }
+dialog { padding: 0; border: none; background: transparent; max-width: min(96vw, 1600px); max-height: 94vh; }
+.tag.fixed { background: var(--accent-soft); color: var(--accent); }
+dialog::backdrop { background: rgba(8, 12, 10, .82); }
+dialog img { display: block; max-width: 100%; max-height: 90vh; border-radius: 6px; }
+dialog .close { position: absolute; top: 8px; right: 8px; font: 600 13px var(--font-body); padding: 6px 12px; border-radius: 6px; border: none; background: var(--surface); color: var(--fg); cursor: pointer; }
+@media (prefers-reduced-motion: no-preference) { .shot img { transition: transform .25s ease; } .shot:hover img { transform: scale(1.01); } }
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow">{{EYEBROW}}</div>
+  <h1>{{HEADING}}</h1>
+  <p class="lede">{{LEDE}}</p>
+  <ul class="facts">
+    <li><b>{{COUNT}}</b> steps</li>
+{{FACTS}}
+  </ul>
+</header>
+
+<nav class="rail" aria-label="Sections"><div class="wrap">{{TOC}}</div></nav>
+
+<main class="wrap">
+{{BODY}}
+{{NOTES}}
+</main>
+
+<dialog id="zoom" aria-label="Enlarged screenshot">
+  <button class="close" type="button" id="zoom-close">Close</button>
+  <img id="zoom-img" alt="">
+</dialog>
+
+<script>
+(() => {
+  const dlg = document.getElementById('zoom');
+  const img = document.getElementById('zoom-img');
+  document.querySelectorAll('.shot').forEach((b) => {
+    b.addEventListener('click', () => {
+      img.src = b.dataset.src;
+      img.alt = b.querySelector('img').alt;
+      dlg.showModal();
+    });
+  });
+  document.getElementById('zoom-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+})();
+</script>
