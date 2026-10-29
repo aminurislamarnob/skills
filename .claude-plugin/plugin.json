@@ -1,0 +1,29 @@
+{
+  "name": "aminurislamarnob-skills",
+  "version": "1.0.0",
+  "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos.",
+  "author": {
+    "name": "Aminur Islam",
+    "url": "https://github.com/aminurislamarnob"
+  },
+  "homepage": "https://github.com/aminurislamarnob/claude-plugins",
+  "repository": "https://github.com/aminurislamarnob/claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "skills",
+    "documentation",
+    "screenshots",
+    "git-worktree",
+    "laravel-herd",
+    "browser",
+    "qa",
+    "video"
+  ],
+  "skills": [
+    "./skills/wordpress/plugin-docs",
+    "./skills/wordpress/wp-worktree",
+    "./skills/browser/browser-walkthrough",
+    "./skills/browser/feature-video"
+  ]
+}

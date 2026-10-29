@@ -1,0 +1,3 @@
+interface:
+  display_name: "WP Worktree"
+  short_description: "One isolated Herd site per git worktree"

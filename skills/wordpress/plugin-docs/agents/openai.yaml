@@ -1,0 +1,3 @@
+interface:
+  display_name: "Plugin Docs"
+  short_description: "Write plugin user docs with real screenshots"

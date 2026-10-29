@@ -1,0 +1,3 @@
+interface:
+  display_name: "Browser Walkthrough"
+  short_description: "Check a feature in Chrome, publish a walkthrough page"
