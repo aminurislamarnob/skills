@@ -5,7 +5,7 @@
   "description": "Aminur Islam's agent skills for WordPress plugin work",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aminurislamarnob/claude-plugins"
+    "url": "https://github.com/aminurislamarnob/skills"
   },
   "license": "MIT",
   "scripts": {

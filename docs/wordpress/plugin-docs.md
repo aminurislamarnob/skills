@@ -1,7 +1,7 @@
 Quickstart:
 
 ```bash
-npx skills add aminurislamarnob/claude-plugins --skill=plugin-docs
+npx skills add aminurislamarnob/skills --skill=plugin-docs
 ```
 
 Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.

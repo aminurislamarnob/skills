@@ -1,7 +1,7 @@
 Quickstart:
 
 ```bash
-npx skills add aminurislamarnob/claude-plugins --skill=feature-video
+npx skills add aminurislamarnob/skills --skill=feature-video
 ```
 
 Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.

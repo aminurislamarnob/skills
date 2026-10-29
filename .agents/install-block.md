@@ -26,7 +26,7 @@ When the plugin is accepted into Anthropic's directory (`claude-plugins-official
 <canonical-block name="claude-code">
 
 ```bash
-claude plugin marketplace add aminurislamarnob/claude-plugins
+claude plugin marketplace add aminurislamarnob/skills
 claude plugin install aiarnob-skills@aminurislamarnob
 ```
 
@@ -39,7 +39,7 @@ Updates itself by default.
 <canonical-block name="codex">
 
 ```bash
-codex plugin marketplace add aminurislamarnob/claude-plugins
+codex plugin marketplace add aminurislamarnob/skills
 codex plugin add aiarnob-skills@aminurislamarnob
 ```
 
@@ -49,12 +49,12 @@ Updates itself at startup.
 
 ## GitHub Copilot (CLI and VS Code)
 
-Use the marketplace, not `copilot plugin install aminurislamarnob/claude-plugins`. Copilot has deprecated direct repo installs, and they can't auto-update. `marketplace add` writes the `extraKnownMarketplaces` entry itself; the one-time edit only adds `autoUpdate: true`.
+Use the marketplace, not `copilot plugin install aminurislamarnob/skills`. Copilot has deprecated direct repo installs, and they can't auto-update. `marketplace add` writes the `extraKnownMarketplaces` entry itself; the one-time edit only adds `autoUpdate: true`.
 
 <canonical-block name="copilot">
 
 ```bash
-copilot plugin marketplace add aminurislamarnob/claude-plugins
+copilot plugin marketplace add aminurislamarnob/skills
 copilot plugin install aiarnob-skills@aminurislamarnob
 ```
 
@@ -63,12 +63,12 @@ Then, once, add `"autoUpdate": true` to the marketplace entry in `~/.copilot/set
 ```json
 {
   "extraKnownMarketplaces": {
-    "aminurislamarnob": { "source": { "source": "github", "repo": "aminurislamarnob/claude-plugins" }, "autoUpdate": true }
+    "aminurislamarnob": { "source": { "source": "github", "repo": "aminurislamarnob/skills" }, "autoUpdate": true }
   }
 }
 ```
 
-In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/aminurislamarnob/claude-plugins`. It updates daily.
+In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/aminurislamarnob/skills`. It updates daily.
 
 </canonical-block>
 
@@ -79,8 +79,8 @@ Gemini doesn't read `.claude-plugin`, and `--path` takes one folder. One install
 <canonical-block name="gemini">
 
 ```bash
-gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/wordpress
-gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/browser
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/wordpress
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/browser
 ```
 
 Re-run both commands to update.
@@ -94,7 +94,7 @@ Re-run both commands to update.
 <canonical-block name="other-agents">
 
 ```bash
-npx skills@latest add aminurislamarnob/claude-plugins -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
+npx skills@latest add aminurislamarnob/skills -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
 ```
 
 When the installer asks which skills to take, include `setup-aiarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
@@ -106,7 +106,7 @@ Use the single-skill form wherever one skill is named on its own, as the `docs/`
 <canonical-block name="skills-sh-one-skill">
 
 ```bash
-npx skills@latest add aminurislamarnob/claude-plugins --skill=<name>
+npx skills@latest add aminurislamarnob/skills --skill=<name>
 ```
 
 ```bash

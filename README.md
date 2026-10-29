@@ -1,6 +1,6 @@
 # Skills for WordPress plugin work
 
-[![skills.sh](https://skills.sh/b/aminurislamarnob/claude-plugins)](https://skills.sh/aminurislamarnob/claude-plugins)
+[![skills.sh](https://skills.sh/b/aminurislamarnob/skills)](https://skills.sh/aminurislamarnob/skills)
 
 Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, and proof that a change works in a real browser, as a walkthrough page or a narrated video.
 
@@ -8,7 +8,7 @@ They are small, composable, and install as a plugin in Claude Code, Codex and Gi
 
 ## Installation (30-second setup)
 
-A plugin updates itself. [skills.sh](https://skills.sh/aminurislamarnob/claude-plugins) copies editable files into your project, and you update them by hand. Pick one per agent, because installing both gives you every skill twice.
+A plugin updates itself. [skills.sh](https://skills.sh/aminurislamarnob/skills) copies editable files into your project, and you update them by hand. Pick one per agent, because installing both gives you every skill twice.
 
 ### 1. Get the skills
 
@@ -16,11 +16,11 @@ A plugin updates itself. [skills.sh](https://skills.sh/aminurislamarnob/claude-p
 <summary><strong>Claude Code</strong></summary>
 
 ```bash
-claude plugin marketplace add aminurislamarnob/claude-plugins
+claude plugin marketplace add aminurislamarnob/skills
 claude plugin install aiarnob-skills@aminurislamarnob
 ```
 
-Or inside Claude Code: `/plugin marketplace add aminurislamarnob/claude-plugins`, then `/plugin install aiarnob-skills@aminurislamarnob`. Updates itself by default.
+Or inside Claude Code: `/plugin marketplace add aminurislamarnob/skills`, then `/plugin install aiarnob-skills@aminurislamarnob`. Updates itself by default.
 
 To offer the plugin to everyone working in a repo, commit this to the repo's `.claude/settings.json`:
 
@@ -28,7 +28,7 @@ To offer the plugin to everyone working in a repo, commit this to the repo's `.c
 {
   "extraKnownMarketplaces": {
     "aminurislamarnob": {
-      "source": { "source": "github", "repo": "aminurislamarnob/claude-plugins" }
+      "source": { "source": "github", "repo": "aminurislamarnob/skills" }
     }
   },
   "enabledPlugins": {
@@ -45,7 +45,7 @@ To offer the plugin to everyone working in a repo, commit this to the repo's `.c
 <summary><strong>Codex</strong></summary>
 
 ```bash
-codex plugin marketplace add aminurislamarnob/claude-plugins
+codex plugin marketplace add aminurislamarnob/skills
 codex plugin add aiarnob-skills@aminurislamarnob
 ```
 
@@ -57,7 +57,7 @@ Updates itself at startup.
 <summary><strong>GitHub Copilot</strong> (CLI and VS Code)</summary>
 
 ```bash
-copilot plugin marketplace add aminurislamarnob/claude-plugins
+copilot plugin marketplace add aminurislamarnob/skills
 copilot plugin install aiarnob-skills@aminurislamarnob
 ```
 
@@ -66,12 +66,12 @@ Then, once, add `"autoUpdate": true` to the marketplace entry in `~/.copilot/set
 ```json
 {
   "extraKnownMarketplaces": {
-    "aminurislamarnob": { "source": { "source": "github", "repo": "aminurislamarnob/claude-plugins" }, "autoUpdate": true }
+    "aminurislamarnob": { "source": { "source": "github", "repo": "aminurislamarnob/skills" }, "autoUpdate": true }
   }
 }
 ```
 
-In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/aminurislamarnob/claude-plugins`. It updates daily.
+In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/aminurislamarnob/skills`. It updates daily.
 
 </details>
 
@@ -79,8 +79,8 @@ In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.c
 <summary><strong>Gemini CLI</strong> (manual updates)</summary>
 
 ```bash
-gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/wordpress
-gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/browser
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/wordpress
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/browser
 ```
 
 Re-run both commands to update.
@@ -91,7 +91,7 @@ Re-run both commands to update.
 <summary><strong>Any other agent, or editable files</strong> (manual updates)</summary>
 
 ```bash
-npx skills@latest add aminurislamarnob/claude-plugins -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
+npx skills@latest add aminurislamarnob/skills -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
 ```
 
 When the installer asks which skills to take, include `setup-aiarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.

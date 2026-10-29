@@ -9,7 +9,7 @@
   The four per-skill plugins (`plugin-docs`, `wp-worktree`, `browser-walkthrough`, `feature-video`, all `@aminurislamarnob-plugins`) are gone; install the one plugin instead:
 
   ```
-  /plugin marketplace add aminurislamarnob/claude-plugins
+  /plugin marketplace add aminurislamarnob/skills
   /plugin install aiarnob-skills@aminurislamarnob
   ```
 

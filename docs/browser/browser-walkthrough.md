@@ -1,7 +1,7 @@
 Quickstart:
 
 ```bash
-npx skills add aminurislamarnob/claude-plugins --skill=browser-walkthrough
+npx skills add aminurislamarnob/skills --skill=browser-walkthrough
 ```
 
 Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.

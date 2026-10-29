@@ -19,7 +19,7 @@ Fill the template below. The **fixed frame** (Quickstart block, source link, `##
 Quickstart:
 
 ```bash
-npx skills add aminurislamarnob/claude-plugins --skill=<name>
+npx skills add aminurislamarnob/skills --skill=<name>
 ```
 
 Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
