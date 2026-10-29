@@ -17,3 +17,9 @@ We restructured to match [mattpocock/skills](https://github.com/mattpocock/skill
 - **Everything or nothing.** A user who wants only `wp-worktree` still installs all four skills. Skills are cheap when idle (a one-line description in context until invoked), so this is acceptable; if it stops being so, split a bucket into its own plugin rather than returning to per-skill plugins.
 - **`${CLAUDE_PLUGIN_ROOT}` paths encode the bucket.** The one such path (in `wp-worktree`) was updated; `AGENTS.md` tells maintainers to grep for it after any move.
 - **Codex plugin deferred.** Codex's `.codex-plugin/plugin.json` takes a single skills path and discovers recursively, so it cannot express "promoted buckets only". `npx skills add` covers Codex today; a native Codex plugin waits until `skills/` holds only promoted skills or Codex supports an include-list.
+
+## Update, 2026-10-29: Codex, Copilot and Gemini
+
+The "Codex plugin deferred" consequence above no longer holds. Codex's plugin loader accepts a `skills` array and falls back to `.claude-plugin/` when there is no `.codex-plugin/`, and GitHub Copilot's CLI reads the same two files. So the one `.claude-plugin/plugin.json` + `marketplace.json` pair is the manifest for Claude Code, Codex and Copilot, with nothing extra to keep in sync. Gemini CLI reads neither; it installs a folder of skills with `gemini skills install --path`, one call per promoted bucket, which is exactly why the buckets hold only promoted skills.
+
+Verified 2026-10-29 against this repo: Claude Code and Copilot CLI 1.0.105 each install `aminurislamarnob-skills@aminurislamarnob` with all five skills. The wording for every route lives in [.agents/install-block.md](../install-block.md).

@@ -4,46 +4,23 @@
 
 Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, and proof that a change works in a real browser, as a walkthrough page or a narrated video.
 
-They are small, composable, and work in Claude Code, Codex, and any other harness that reads the [Agent Skills](https://skills.sh) format. Hack on them and make them your own.
+They are small, composable, and install as a plugin in Claude Code, Codex and GitHub Copilot, as skills in Gemini CLI, and through [skills.sh](https://skills.sh) in any other harness that reads the Agent Skills format. Hack on them and make them your own.
 
-## Quickstart (30-second setup)
+## Installation (30-second setup)
 
-1. Run the skills.sh installer:
+A plugin updates itself. [skills.sh](https://skills.sh/aminurislamarnob/claude-plugins) copies editable files into your project, and you update them by hand. Pick one per agent, because installing both gives you every skill twice.
 
-```bash
-npx skills@latest add aminurislamarnob/claude-plugins
-```
+### 1. Get the skills
 
-2. Pick the skills you want, and which coding agents you want to install them on. **Make sure you select `/setup-aminurislamarnob-skills`**.
-
-3. Run `/setup-aminurislamarnob-skills` in your agent. It will:
-   - Find the local WordPress site the plugin runs on (URL, WordPress root) and ask how to log in as an administrator
-   - Ask where the client-facing docs live (when you installed `plugin-docs`)
-   - Check which tools the skills need are installed (WP-CLI, Herd, Playwright, FFmpeg, HyperFrames) and tell you what's missing
-
-4. Bam - you're ready to go. Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`).
-
-## Install as a Claude Code plugin
-
-Prefer a plug-and-play install you don't maintain by hand? The skills also ship as a native [Claude Code plugin](https://code.claude.com/docs/en/plugins): a managed, read-only bundle that updates when a new version ships, instead of editable copies in your repo.
-
-Inside Claude Code:
-
-```
-/plugin marketplace add aminurislamarnob/claude-plugins
-/plugin install aminurislamarnob-skills@aminurislamarnob
-```
-
-Or from your shell:
+<details>
+<summary><strong>Claude Code</strong></summary>
 
 ```bash
 claude plugin marketplace add aminurislamarnob/claude-plugins
 claude plugin install aminurislamarnob-skills@aminurislamarnob
 ```
 
-Then run `/setup-aminurislamarnob-skills` once per repo, exactly as in the quickstart above.
-
-Update later with `/plugin marketplace update aminurislamarnob`.
+Or inside Claude Code: `/plugin marketplace add aminurislamarnob/claude-plugins`, then `/plugin install aminurislamarnob-skills@aminurislamarnob`. Updates itself by default.
 
 To offer the plugin to everyone working in a repo, commit this to the repo's `.claude/settings.json`:
 
@@ -60,12 +37,78 @@ To offer the plugin to everyone working in a repo, commit this to the repo's `.c
 }
 ```
 
-Two ways to install, two philosophies:
+> Upgrading from the old per-skill plugins (`plugin-docs@aminurislamarnob-plugins` and friends)? Those names are gone; install `aminurislamarnob-skills` once as above. See [CHANGELOG.md](./CHANGELOG.md).
 
-- **[skills.sh](https://skills.sh)** copies the skills into your project so you can hack on them.
-- **The plugin** keeps them as a read-only, always-current bundle you don't edit.
+</details>
 
-> Upgrading from the old per-skill plugins (`plugin-docs@aminurislamarnob-plugins` and friends)? Those names are gone. Add the marketplace and install `aminurislamarnob-skills` once; see [CHANGELOG.md](./CHANGELOG.md).
+<details>
+<summary><strong>Codex</strong></summary>
+
+```bash
+codex plugin marketplace add aminurislamarnob/claude-plugins
+codex plugin add aminurislamarnob-skills@aminurislamarnob
+```
+
+Updates itself at startup.
+
+</details>
+
+<details>
+<summary><strong>GitHub Copilot</strong> (CLI and VS Code)</summary>
+
+```bash
+copilot plugin marketplace add aminurislamarnob/claude-plugins
+copilot plugin install aminurislamarnob-skills@aminurislamarnob
+```
+
+Then, once, add `"autoUpdate": true` to the marketplace entry in `~/.copilot/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "aminurislamarnob": { "source": { "source": "github", "repo": "aminurislamarnob/claude-plugins" }, "autoUpdate": true }
+  }
+}
+```
+
+In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/aminurislamarnob/claude-plugins`. It updates daily.
+
+</details>
+
+<details>
+<summary><strong>Gemini CLI</strong> (manual updates)</summary>
+
+```bash
+gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/wordpress
+gemini skills install https://github.com/aminurislamarnob/claude-plugins.git --path skills/browser
+```
+
+Re-run both commands to update.
+
+</details>
+
+<details>
+<summary><strong>Any other agent, or editable files</strong> (manual updates)</summary>
+
+```bash
+npx skills@latest add aminurislamarnob/claude-plugins -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
+```
+
+When the installer asks which skills to take, include `setup-aminurislamarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
+
+</details>
+
+### 2. Run `/setup-aminurislamarnob-skills`
+
+In your agent, run it once per repo. It will:
+
+- Find the local WordPress site the plugin runs on (URL, WordPress root) and ask how to log in as an administrator
+- Ask where the client-facing docs live (when you installed `plugin-docs`)
+- Check which tools the skills need are installed (WP-CLI, Herd, Playwright, FFmpeg, HyperFrames) and tell you what's missing
+
+### 3. Bam - you're ready to go.
+
+Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`).
 
 ## Why these skills exist
 

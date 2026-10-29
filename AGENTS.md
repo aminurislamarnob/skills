@@ -9,6 +9,8 @@ Every skill in `wordpress/` or `browser/` (the **promoted** buckets) must have a
 
 The repo is also its own single-plugin Claude Code marketplace: `.claude-plugin/marketplace.json` lists the one `aminurislamarnob-skills` plugin. Releases go through changesets: every user-visible change gets a `.changeset/*.md`, and the release workflow opens a version PR. `.claude-plugin/plugin.json`'s `version` must equal `package.json`'s — Claude uses the plugin `version` to decide when installed users see an update — and `scripts/sync-plugin-version.mjs` copies it across after `changeset version`. Run `claude plugin validate . --strict` after touching either manifest. Why one plugin with bucketed skills, rather than one plugin per skill, lives in [.agents/adr/0001-single-plugin-with-bucketed-skills.md](./.agents/adr/0001-single-plugin-with-bucketed-skills.md).
 
+Install wording for every agent (Claude Code, Codex, Copilot, Gemini CLI, skills.sh) lives in [.agents/install-block.md](./.agents/install-block.md); change it there first, then propagate to `README.md`, `.changeset/*` and `docs/`. Codex and Copilot read the same `.claude-plugin/` manifests as Claude Code, so there is no second manifest to maintain.
+
 Each skill entry in the top-level `README.md` must link the skill name to its `SKILL.md`.
 
 Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`. The promoted buckets' `README.md`s and the top-level `README.md` group entries into **User-invoked** and **Model-invoked**; a group with no skills is omitted.
