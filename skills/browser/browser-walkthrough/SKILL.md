@@ -18,6 +18,7 @@ Done when every behaviour in the PR body maps to at least one step.
 - Load the Chrome tools in one `ToolSearch` call (`tabs_context_mcp`, `navigate`, `computer`, `find`, `javascript_tool`, `browser_batch`, `read_page`). Call `tabs_context_mcp` first; work in the session's tab group.
 - Make a shots folder in the scratchpad and copy [scripts/grab.sh](scripts/grab.sh) beside it.
 - Start what the run depends on and confirm it answers: webhook listeners (`stripe listen …`), queues, test-mode keys. Check a background listener's log for its ready line before step 1.
+- **Site**: `docs/agents/wordpress-site.md`, when it exists, names the URL, the WordPress root, the login source and the services to start; read it first.
 - **Roles**: when the run needs a second user (vendor, customer), log in with test credentials the project already uses (its e2e helpers, seed files). For WordPress, mint auth cookies with WP-CLI (`wp_generate_auth_cookie`) and set them with `document.cookie` after logging the current user out; restore the user's own session at the end.
 
 ## 3. Run and capture

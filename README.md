@@ -1,5 +1,7 @@
 # Skills for WordPress plugin work
 
+[![skills.sh](https://skills.sh/b/aminurislamarnob/claude-plugins)](https://skills.sh/aminurislamarnob/claude-plugins)
+
 Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, and proof that a change works in a real browser, as a walkthrough page or a narrated video.
 
 They are small, composable, and work in Claude Code, Codex, and any other harness that reads the [Agent Skills](https://skills.sh) format. Hack on them and make them your own.
@@ -12,9 +14,14 @@ They are small, composable, and work in Claude Code, Codex, and any other harnes
 npx skills@latest add aminurislamarnob/claude-plugins
 ```
 
-2. Pick the skills you want and the coding agents to install them on.
+2. Pick the skills you want, and which coding agents you want to install them on. **Make sure you select `/setup-aminurislamarnob-skills`**.
 
-3. Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`).
+3. Run `/setup-aminurislamarnob-skills` in your agent. It will:
+   - Find the local WordPress site the plugin runs on (URL, WordPress root) and ask how to log in as an administrator
+   - Ask where the client-facing docs live (when you installed `plugin-docs`)
+   - Check which tools the skills need are installed (WP-CLI, Herd, Playwright, FFmpeg, HyperFrames) and tell you what's missing
+
+4. Bam - you're ready to go. Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`).
 
 ## Install as a Claude Code plugin
 
@@ -33,6 +40,8 @@ Or from your shell:
 claude plugin marketplace add aminurislamarnob/claude-plugins
 claude plugin install aminurislamarnob-skills@aminurislamarnob
 ```
+
+Then run `/setup-aminurislamarnob-skills` once per repo, exactly as in the quickstart above.
 
 Update later with `/plugin marketplace update aminurislamarnob`.
 
@@ -76,11 +85,15 @@ A diff is not evidence that a feature works. [`browser-walkthrough`](./skills/br
 
 ## Reference
 
-Skills split on one axis: who can invoke them. **User-invoked** skills are reachable only when you type them. **Model-invoked** skills can be invoked by you _or_ reached for automatically by the agent when the task fits. Every skill here is model-invoked today. Each skill has a docs page saying what to have ready and what you get back.
+Skills split on one axis: who can invoke them. **User-invoked** skills are reachable only when you type them. **Model-invoked** skills can be invoked by you _or_ reached for automatically by the agent when the task fits. Each skill has a docs page saying what to have ready and what you get back.
 
 ### WordPress
 
 Skills for the plugin and its development environment. Bucket: [`skills/wordpress`](./skills/wordpress/README.md).
+
+**User-invoked**
+
+- **[setup-aminurislamarnob-skills](./skills/wordpress/setup-aminurislamarnob-skills/SKILL.md)** — Configure this repo for the skills (site URL, WordPress root, admin login, docs location, tooling check). Run once per repo before using the other skills. [Docs](./docs/wordpress/setup-aminurislamarnob-skills.md)
 
 **Model-invoked**
 

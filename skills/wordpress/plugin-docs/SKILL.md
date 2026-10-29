@@ -11,7 +11,7 @@ The reference implementation is the [StoreSuite docs](https://storesuite.dev/doc
 
 ## 1. Scope
 
-- **Target**: where the docs go. If the plugin has no docs location yet, ask the user (one question, with your recommendation). Output layout:
+- **Target**: where the docs go. `docs/agents/plugin-docs.md` names it when `/setup-aminurislamarnob-skills` has run; otherwise, if the plugin has no docs location yet, ask the user (one question, with your recommendation). Output layout:
   - `<docs>/content/docs/<slug>.mdx`: one page per feature area
   - `<docs>/content/docs/meta.json`: `{ "title": "Documentation", "root": true, "pages": [...] }` sidebar order
   - `<docs>/public/docs/images/<name>.jpg`: screenshots, referenced as `/docs/images/<name>.jpg`
@@ -43,7 +43,7 @@ Screenshots show a believable live site, not test fixtures: real-sounding job ti
 
 Use `capture.mjs` from this skill's base directory (the path this skill was loaded from). It logs in, renders at 2× device scale, hides admin notices, and fails on error pages. Run it from a directory where `playwright` resolves: the plugin root, if it has Playwright; otherwise `npm i -D playwright && npx playwright install chromium` in the scratchpad.
 
-It reads the site and an administrator login from `WP_BASE_URL`, `WP_USERNAME` and `WP_PASSWORD`. Take them from the project's e2e config if it has one (often a gitignored `.env`); otherwise ask the user. Keep credentials out of the docs and out of git.
+It reads the site and an administrator login from `WP_BASE_URL`, `WP_USERNAME` and `WP_PASSWORD`. `docs/agents/wordpress-site.md` names where they come from when `/setup-aminurislamarnob-skills` has run; otherwise take them from the project's e2e config if it has one (often a gitignored `.env`); otherwise ask the user. Keep credentials out of the docs and out of git.
 
 ```bash
 set -a; . tests/e2e/.env; set +a   # or export the three variables

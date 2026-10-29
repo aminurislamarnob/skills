@@ -17,7 +17,7 @@ Done when every behaviour in the PR body is a step with a cue.
 
 ## 2. Prepare the site
 
-Start what the run depends on and confirm it answers before recording: webhook listeners, queues, test-mode keys, a balance the flow needs. When a CLI's login has expired, prefer the project's own saved test key passed through the environment over asking the user to log in. Confirm the users each take logs in as exist.
+`docs/agents/wordpress-site.md`, when it exists, names the site URL (`BASE_URL`), the WordPress root (`WP_PATH`), the users each role logs in as, and the services to start; read it first. Start what the run depends on and confirm it answers before recording: webhook listeners, queues, test-mode keys, a balance the flow needs. When a CLI's login has expired, prefer the project's own saved test key passed through the environment over asking the user to log in. Confirm the users each take logs in as exist.
 
 ## 3. Record
 

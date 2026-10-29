@@ -23,6 +23,9 @@ The catalogue Claude Code reads to find plugins. This repo is its own single-plu
 **Docs page**:
 The human-facing page at `docs/<bucket>/<skill>.md` that says what a skill does, when to reach for it, and what to have ready. Not a copy of `SKILL.md`.
 
+**Repo config**:
+The files under `docs/agents/` (`wordpress-site.md`, `plugin-docs.md`) that `setup-aminurislamarnob-skills` writes once per repo and the other skills read first: site URL, WordPress root, login source, docs location. Soft dependency: a skill still works without them by asking.
+
 **Walkthrough** (`browser-walkthrough`):
 One honest run of a feature in the user's own Chrome, recorded as numbered screenshots with a caption each and published as a private Artifact page. A step whose server state disagrees with its screenshot is a **finding**, not a step.
 
