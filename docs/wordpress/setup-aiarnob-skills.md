@@ -1,22 +1,22 @@
 Quickstart:
 
 ```bash
-npx skills add aminurislamarnob/claude-plugins --skill=setup-aminurislamarnob-skills
+npx skills add aminurislamarnob/claude-plugins --skill=setup-aiarnob-skills
 ```
 
-Or, as part of the Claude Code plugin: `/plugin install aminurislamarnob-skills@aminurislamarnob`.
+Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
 
-[Source](../../skills/wordpress/setup-aminurislamarnob-skills/SKILL.md)
+[Source](../../skills/wordpress/setup-aiarnob-skills/SKILL.md)
 
 ## What it does
 
-`setup-aminurislamarnob-skills` teaches one repo how the other skills should behave in it: which local WordPress site the plugin runs on, how to log in to it, where the client docs live, and which tools are installed. It records the answers as **config** the other skills read.
+`setup-aiarnob-skills` teaches one repo how the other skills should behave in it: which local WordPress site the plugin runs on, how to log in to it, where the client docs live, and which tools are installed. It records the answers as **config** the other skills read.
 
 It writes config, it does not hard-code behaviour. The answers are discovered from the real repo and machine (the `wp-load.php` above the repo, `wp option get siteurl`, an existing e2e env file, an existing docs tree, `which ffmpeg`) and confirmed with you rather than guessed. No password is ever written; the config names the file that holds it.
 
 ## When to reach for it
 
-You invoke this by typing `/setup-aminurislamarnob-skills` — the agent won't reach for it on its own.
+You invoke this by typing `/setup-aiarnob-skills` — the agent won't reach for it on its own.
 
 Reach for it **once per repo, before the first use of any other skill**. If [plugin-docs](./plugin-docs.md) asks where the docs go, or [browser-walkthrough](../browser/browser-walkthrough.md) asks which site to open, it hasn't been run here yet. Re-run it only when the site or the docs move, or to re-check tooling; day-to-day tweaks are edits to `docs/agents/*.md`.
 

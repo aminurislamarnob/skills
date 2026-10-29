@@ -17,10 +17,10 @@ A plugin updates itself. [skills.sh](https://skills.sh/aminurislamarnob/claude-p
 
 ```bash
 claude plugin marketplace add aminurislamarnob/claude-plugins
-claude plugin install aminurislamarnob-skills@aminurislamarnob
+claude plugin install aiarnob-skills@aminurislamarnob
 ```
 
-Or inside Claude Code: `/plugin marketplace add aminurislamarnob/claude-plugins`, then `/plugin install aminurislamarnob-skills@aminurislamarnob`. Updates itself by default.
+Or inside Claude Code: `/plugin marketplace add aminurislamarnob/claude-plugins`, then `/plugin install aiarnob-skills@aminurislamarnob`. Updates itself by default.
 
 To offer the plugin to everyone working in a repo, commit this to the repo's `.claude/settings.json`:
 
@@ -32,12 +32,12 @@ To offer the plugin to everyone working in a repo, commit this to the repo's `.c
     }
   },
   "enabledPlugins": {
-    "aminurislamarnob-skills@aminurislamarnob": true
+    "aiarnob-skills@aminurislamarnob": true
   }
 }
 ```
 
-> Upgrading from the old per-skill plugins (`plugin-docs@aminurislamarnob-plugins` and friends)? Those names are gone; install `aminurislamarnob-skills` once as above. See [CHANGELOG.md](./CHANGELOG.md).
+> Upgrading from the old per-skill plugins (`plugin-docs@aminurislamarnob-plugins` and friends)? Those names are gone; install `aiarnob-skills` once as above. See [CHANGELOG.md](./CHANGELOG.md).
 
 </details>
 
@@ -46,7 +46,7 @@ To offer the plugin to everyone working in a repo, commit this to the repo's `.c
 
 ```bash
 codex plugin marketplace add aminurislamarnob/claude-plugins
-codex plugin add aminurislamarnob-skills@aminurislamarnob
+codex plugin add aiarnob-skills@aminurislamarnob
 ```
 
 Updates itself at startup.
@@ -58,7 +58,7 @@ Updates itself at startup.
 
 ```bash
 copilot plugin marketplace add aminurislamarnob/claude-plugins
-copilot plugin install aminurislamarnob-skills@aminurislamarnob
+copilot plugin install aiarnob-skills@aminurislamarnob
 ```
 
 Then, once, add `"autoUpdate": true` to the marketplace entry in `~/.copilot/settings.json`:
@@ -94,11 +94,11 @@ Re-run both commands to update.
 npx skills@latest add aminurislamarnob/claude-plugins -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
 ```
 
-When the installer asks which skills to take, include `setup-aminurislamarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
+When the installer asks which skills to take, include `setup-aiarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
 
 </details>
 
-### 2. Run `/setup-aminurislamarnob-skills`
+### 2. Run `/setup-aiarnob-skills`
 
 In your agent, run it once per repo. It will:
 
@@ -136,7 +136,7 @@ Skills for the plugin and its development environment. Bucket: [`skills/wordpres
 
 **User-invoked**
 
-- **[setup-aminurislamarnob-skills](./skills/wordpress/setup-aminurislamarnob-skills/SKILL.md)** — Configure this repo for the skills (site URL, WordPress root, admin login, docs location, tooling check). Run once per repo before using the other skills. [Docs](./docs/wordpress/setup-aminurislamarnob-skills.md)
+- **[setup-aiarnob-skills](./skills/wordpress/setup-aiarnob-skills/SKILL.md)** — Configure this repo for the skills (site URL, WordPress root, admin login, docs location, tooling check). Run once per repo before using the other skills. [Docs](./docs/wordpress/setup-aiarnob-skills.md)
 
 **Model-invoked**
 

@@ -22,7 +22,7 @@ Quickstart:
 npx skills add aminurislamarnob/claude-plugins --skill=<name>
 ```
 
-Or, as part of the Claude Code plugin: `/plugin install aminurislamarnob-skills@aminurislamarnob`.
+Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
 
 [Source](../../skills/<bucket>/<name>/SKILL.md)
 

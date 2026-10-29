@@ -4,7 +4,7 @@ Quickstart:
 npx skills add aminurislamarnob/claude-plugins --skill=wp-worktree
 ```
 
-Or, as part of the Claude Code plugin: `/plugin install aminurislamarnob-skills@aminurislamarnob`.
+Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
 
 [Source](../../skills/wordpress/wp-worktree/SKILL.md)
 

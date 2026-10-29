@@ -7,7 +7,7 @@
   "description": "Aminur Islam's skills for WordPress plugin work, as an installable Claude Code plugin.",
   "plugins": [
     {
-      "name": "aminurislamarnob-skills",
+      "name": "aiarnob-skills",
       "source": "./",
       "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos.",
       "category": "engineering",

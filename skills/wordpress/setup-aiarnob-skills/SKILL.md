@@ -1,5 +1,5 @@
 ---
-name: setup-aminurislamarnob-skills
+name: setup-aiarnob-skills
 description: Configure this repo for the WordPress skills — record the site URL, WordPress root, admin login and docs location, and check the tooling each skill needs. Run once per repo before first use of the other skills.
 disable-model-invocation: true
 ---
@@ -87,7 +87,7 @@ The block:
 
 ### Tooling
 
-[one line: what is missing, or "all tools present"]. Checked by `/setup-aminurislamarnob-skills` on <date>.
+[one line: what is missing, or "all tools present"]. Checked by `/setup-aiarnob-skills` on <date>.
 ```
 
 Include the `### Plugin docs` sub-block, and write `docs/agents/plugin-docs.md`, only when `plugin-docs` is installed and Section B ran.

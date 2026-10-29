@@ -5,7 +5,7 @@ Every `SKILL.md` in this repo is a skill. The one axis that splits them is **inv
 - **User-invoked** — reachable **only by the human typing its name**. Set `disable-model-invocation: true` in the frontmatter (Claude Code) and `policy.allow_implicit_invocation: false` in `agents/openai.yaml` (Codex). The `description` is **human-facing**: a one-line summary read by a person browsing slash-commands. Strip trigger lists ("Use when the user says…").
 - **Model-invoked** — reachable by **model or user**. The default: omit `disable-model-invocation` and the `policy` block from `agents/openai.yaml`. The `description` is **model-facing** and keeps rich trigger phrasing ("Use when asked to…, mentions…") so auto-invocation fires. The test for whether a skill should stay model-invoked: _could the model usefully reach for this autonomously?_
 
-`setup-aminurislamarnob-skills` is user-invoked: it is a run-once bootstrap the human decides to run. Every other skill is model-invoked: each is the natural response to a plain request ("write the user docs", "check this PR in the real browser", "record a demo video", "spin up a worktree site"), so the model should be free to reach for it.
+`setup-aiarnob-skills` is user-invoked: it is a run-once bootstrap the human decides to run. Every other skill is model-invoked: each is the natural response to a plain request ("write the user docs", "check this PR in the real browser", "record a demo video", "spin up a worktree site"), so the model should be free to reach for it.
 
 Each harness excludes a user-invoked skill from the model's reach in its own way, so nothing but the human can fire it — no other skill can. A user-invoked skill may invoke model-invoked skills, but it can never reach another user-invoked skill.
 

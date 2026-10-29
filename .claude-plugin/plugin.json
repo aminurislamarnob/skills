@@ -1,5 +1,5 @@
 {
-  "name": "aminurislamarnob-skills",
+  "name": "aiarnob-skills",
   "version": "1.0.0",
   "description": "Aminur Islam's agent skills for WordPress plugin work \u2014 client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos.",
   "author": {
@@ -21,7 +21,7 @@
     "video"
   ],
   "skills": [
-    "./skills/wordpress/setup-aminurislamarnob-skills",
+    "./skills/wordpress/setup-aiarnob-skills",
     "./skills/wordpress/plugin-docs",
     "./skills/wordpress/wp-worktree",
     "./skills/browser/browser-walkthrough",

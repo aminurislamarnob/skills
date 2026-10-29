@@ -4,7 +4,7 @@ Quickstart:
 npx skills add aminurislamarnob/claude-plugins --skill=plugin-docs
 ```
 
-Or, as part of the Claude Code plugin: `/plugin install aminurislamarnob-skills@aminurislamarnob`.
+Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
 
 [Source](../../skills/wordpress/plugin-docs/SKILL.md)
 

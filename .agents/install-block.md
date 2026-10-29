@@ -19,7 +19,7 @@ Every managed route installs from this repo's own marketplace, `.claude-plugin/m
 
 Verified 2026-10-29: Claude Code (marketplace add + install, all five skills), Copilot CLI 1.0.105 (marketplace add + install, all five skills), Gemini CLI 0.66.0 (both bucket installs, all five skills). Codex is documented from its manifest loader (`codex-rs/core-plugins/src/manifest.rs` falls back to `.claude-plugin/` when there is no `.codex-plugin/`) and from mattpocock/skills, which ships the same layout; nobody has run Codex against this repo yet.
 
-When the plugin is accepted into Anthropic's directory (`claude-plugins-official`, submitted at https://clau.de/plugin-directory-submission), the Claude Code block becomes the one-liner `claude plugin install aminurislamarnob-skills@claude-plugins-official` with no `marketplace add`. Until then, the two-line block below is the route.
+When the plugin is accepted into Anthropic's directory (`claude-plugins-official`, submitted at https://clau.de/plugin-directory-submission), the Claude Code block becomes the one-liner `claude plugin install aiarnob-skills@claude-plugins-official` with no `marketplace add`. Until then, the two-line block below is the route.
 
 ## Claude Code
 
@@ -27,7 +27,7 @@ When the plugin is accepted into Anthropic's directory (`claude-plugins-official
 
 ```bash
 claude plugin marketplace add aminurislamarnob/claude-plugins
-claude plugin install aminurislamarnob-skills@aminurislamarnob
+claude plugin install aiarnob-skills@aminurislamarnob
 ```
 
 Updates itself by default.
@@ -40,7 +40,7 @@ Updates itself by default.
 
 ```bash
 codex plugin marketplace add aminurislamarnob/claude-plugins
-codex plugin add aminurislamarnob-skills@aminurislamarnob
+codex plugin add aiarnob-skills@aminurislamarnob
 ```
 
 Updates itself at startup.
@@ -55,7 +55,7 @@ Use the marketplace, not `copilot plugin install aminurislamarnob/claude-plugins
 
 ```bash
 copilot plugin marketplace add aminurislamarnob/claude-plugins
-copilot plugin install aminurislamarnob-skills@aminurislamarnob
+copilot plugin install aiarnob-skills@aminurislamarnob
 ```
 
 Then, once, add `"autoUpdate": true` to the marketplace entry in `~/.copilot/settings.json`:
@@ -97,7 +97,7 @@ Re-run both commands to update.
 npx skills@latest add aminurislamarnob/claude-plugins -a <agent>  # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose
 ```
 
-When the installer asks which skills to take, include `setup-aminurislamarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
+When the installer asks which skills to take, include `setup-aiarnob-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.
 
 </canonical-block>
 

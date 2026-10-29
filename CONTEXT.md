@@ -1,4 +1,4 @@
-# aminurislamarnob-skills
+# aiarnob-skills
 
 A collection of agent skills for WordPress plugin work, shipped as one Claude Code plugin and installable into other harnesses with `npx skills add`.
 
@@ -15,7 +15,7 @@ A folder under `skills/` that groups skills by theme. `wordpress/` and `browser/
 Shipped in the plugin, listed in the top-level README, and given a docs page. Exactly the skills named in `.claude-plugin/plugin.json`'s `skills` array.
 
 **Plugin**:
-The one Claude Code bundle, `aminurislamarnob-skills`, defined by `.claude-plugin/plugin.json`. It carries the promoted skills and a `version` Claude uses to offer updates.
+The one Claude Code bundle, `aiarnob-skills`, defined by `.claude-plugin/plugin.json`. It carries the promoted skills and a `version` Claude uses to offer updates.
 
 **Marketplace**:
 The catalogue Claude Code reads to find plugins. This repo is its own single-plugin marketplace, `aminurislamarnob`, defined by `.claude-plugin/marketplace.json`.
@@ -24,7 +24,7 @@ The catalogue Claude Code reads to find plugins. This repo is its own single-plu
 The human-facing page at `docs/<bucket>/<skill>.md` that says what a skill does, when to reach for it, and what to have ready. Not a copy of `SKILL.md`.
 
 **Repo config**:
-The files under `docs/agents/` (`wordpress-site.md`, `plugin-docs.md`) that `setup-aminurislamarnob-skills` writes once per repo and the other skills read first: site URL, WordPress root, login source, docs location. Soft dependency: a skill still works without them by asking.
+The files under `docs/agents/` (`wordpress-site.md`, `plugin-docs.md`) that `setup-aiarnob-skills` writes once per repo and the other skills read first: site URL, WordPress root, login source, docs location. Soft dependency: a skill still works without them by asking.
 
 **Walkthrough** (`browser-walkthrough`):
 One honest run of a feature in the user's own Chrome, recorded as numbered screenshots with a caption each and published as a private Artifact page. A step whose server state disagrees with its screenshot is a **finding**, not a step.

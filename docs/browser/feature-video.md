@@ -4,7 +4,7 @@ Quickstart:
 npx skills add aminurislamarnob/claude-plugins --skill=feature-video
 ```
 
-Or, as part of the Claude Code plugin: `/plugin install aminurislamarnob-skills@aminurislamarnob`.
+Or, as part of the Claude Code plugin: `/plugin install aiarnob-skills@aminurislamarnob`.
 
 [Source](../../skills/browser/feature-video/SKILL.md)
 

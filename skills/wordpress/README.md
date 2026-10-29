@@ -6,7 +6,7 @@ Skills for the plugin and its development environment.
 
 Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
 
-- **[setup-aminurislamarnob-skills](./setup-aminurislamarnob-skills/SKILL.md)** — Configure a repo for the skills: site URL, WordPress root, admin login, docs location, tooling check. Run once per repo.
+- **[setup-aiarnob-skills](./setup-aiarnob-skills/SKILL.md)** — Configure a repo for the skills: site URL, WordPress root, admin login, docs location, tooling check. Run once per repo.
 
 ## Model-invoked
 
