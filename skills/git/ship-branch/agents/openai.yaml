@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ship Branch"
+  short_description: "Commit, push, PR, merge, delete the branch"
+policy:
+  allow_implicit_invocation: false

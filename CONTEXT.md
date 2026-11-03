@@ -1,6 +1,6 @@
 # aiarnob-skills
 
-A collection of agent skills for WordPress plugin work, shipped as one Claude Code plugin and installable into other harnesses with `npx skills add`.
+A collection of agent skills for WordPress plugin work and for shipping a branch, shipped as one Claude Code plugin and installable into other harnesses with `npx skills add`.
 
 ## Language
 
@@ -9,7 +9,7 @@ One folder holding a `SKILL.md` (frontmatter `name` + `description`, then the pr
 _Avoid_: command, plugin (a plugin is the bundle, see below)
 
 **Bucket**:
-A folder under `skills/` that groups skills by theme. `wordpress/` and `browser/` are **promoted**; `in-progress/` and `deprecated/` are not.
+A folder under `skills/` that groups skills by theme. `wordpress/`, `browser/` and `git/` are **promoted**; `in-progress/` and `deprecated/` are not.
 
 **Promoted**:
 Shipped in the plugin, listed in the top-level README, and given a docs page. Exactly the skills named in `.claude-plugin/plugin.json`'s `skills` array.

@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/aminurislamarnob/skills)](https://skills.sh/aminurislamarnob/skills)
 
-Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, and proof that a change works in a real browser, as a walkthrough page or a narrated video.
+Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, proof that a change works in a real browser, as a walkthrough page or a narrated video, and a one-command ship that commits, pushes, opens the PR, merges it and cleans up the branch.
 
 They are small, composable, and install as a plugin in Claude Code, Codex and GitHub Copilot, as skills in Gemini CLI, and through [skills.sh](https://skills.sh) in any other harness that reads the Agent Skills format. Hack on them and make them your own.
 
@@ -81,9 +81,10 @@ In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.c
 ```bash
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/wordpress
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/browser
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/git
 ```
 
-Re-run both commands to update.
+Re-run all three commands to update.
 
 </details>
 
@@ -108,7 +109,7 @@ In your agent, run it once per repo. It will:
 
 ### 3. Bam - you're ready to go.
 
-Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`).
+Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`, `/ship-branch`).
 
 ## Why these skills exist
 
@@ -125,6 +126,10 @@ Several worktrees, or several agents, pointed at one WordPress install share a d
 ### "It works" needs proof
 
 A diff is not evidence that a feature works. [`browser-walkthrough`](./skills/browser/browser-walkthrough/SKILL.md) runs every step of a change in your real Chrome, screenshots each one, checks the server agrees with the screen, and publishes a private walkthrough page with the findings. [`feature-video`](./skills/browser/feature-video/SKILL.md) records the same kind of run with Playwright, cuts it into a captioned film with [HyperFrames](https://hyperframes.heygen.com), and narrates it with an ElevenLabs voice.
+
+### Five commands to land a branch
+
+Commit, push, open the PR, merge, delete the branch here and on GitHub: the same sequence every time, and easy to leave half done. [`ship-branch`](./skills/git/ship-branch/SKILL.md) runs it as one command, writes the commit and PR text from the diff, skips every step that has already happened, and stops without forcing anything when GitHub wants checks or a review first.
 
 ## Reference
 
@@ -151,6 +156,14 @@ Skills that run a change in a real browser and turn the run into a deliverable. 
 
 - **[browser-walkthrough](./skills/browser/browser-walkthrough/SKILL.md)** — Check a feature or PR end to end in your real Chrome, screenshot every step, verify the server agrees, and publish a private walkthrough page with findings. [Docs](./docs/browser/browser-walkthrough.md)
 - **[feature-video](./skills/browser/feature-video/SKILL.md)** — Record a feature working in a real browser, edit the takes into a captioned walkthrough video with HyperFrames, and narrate it with an ElevenLabs voice. [Docs](./docs/browser/feature-video.md)
+
+### Git
+
+Skills for moving a branch through git and GitHub. Bucket: [`skills/git`](./skills/git/README.md).
+
+**User-invoked**
+
+- **[ship-branch](./skills/git/ship-branch/SKILL.md)** — Commit the current work, push, open a pull request, merge it, and delete the branch locally and on the remote. Each step is skipped when already done, so it is safe to re-run. [Docs](./docs/git/ship-branch.md)
 
 ## Contributing
 
