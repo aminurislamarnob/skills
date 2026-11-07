@@ -1,0 +1,3 @@
+interface:
+  display_name: "Case Study"
+  short_description: "Turn your git commits into a portfolio case study page"

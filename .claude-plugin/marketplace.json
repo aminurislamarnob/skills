@@ -9,7 +9,7 @@
     {
       "name": "aiarnob-skills",
       "source": "./",
-      "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos, and a one-command ship (commit, push, PR, merge, clean up).",
+      "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos, a one-command ship (commit, push, PR, merge, clean up), and portfolio case studies written from your own commits.",
       "category": "engineering",
       "keywords": [
         "wordpress",
@@ -18,7 +18,8 @@
         "git-worktree",
         "browser",
         "video",
-        "git"
+        "git",
+        "portfolio"
       ]
     }
   ]

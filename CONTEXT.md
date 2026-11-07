@@ -9,7 +9,7 @@ One folder holding a `SKILL.md` (frontmatter `name` + `description`, then the pr
 _Avoid_: command, plugin (a plugin is the bundle, see below)
 
 **Bucket**:
-A folder under `skills/` that groups skills by theme. `wordpress/`, `browser/` and `git/` are **promoted**; `in-progress/` and `deprecated/` are not.
+A folder under `skills/` that groups skills by theme. `wordpress/`, `browser/`, `git/` and `portfolio/` are **promoted**; `in-progress/` and `deprecated/` are not.
 
 **Promoted**:
 Shipped in the plugin, listed in the top-level README, and given a docs page. Exactly the skills named in `.claude-plugin/plugin.json`'s `skills` array.
@@ -34,6 +34,9 @@ A take is one recorded Playwright session, one per role. A cue is the moment ins
 
 **Page map** (`plugin-docs`):
 The agreed list of docs pages, one per user-visible feature area, settled with the user before any page is written.
+
+**Case study** (`case-study`):
+A portfolio page about one person's part in one project, built from their own commits and laid out as a dated engineering log, with a commit chart against the team's and a footer that says where every number came from. Only their commits count as theirs; every claim traces to a source.
 
 **Worktree site** (`wp-worktree`):
 The isolated Herd site, `https://<site>--<worktree>.test`, with its own cloned database, that backs one git worktree.

@@ -1,6 +1,6 @@
 # Writing docs pages
 
-Every skill in a promoted bucket (`wordpress/`, `browser/`, `git/`) has a human-facing **docs page** at `docs/<bucket>/<skill-name>.md` — the docs tree mirrors the promoted bucket folders under `skills/`. The page is not the skill and not a copy of `SKILL.md`. Skills in `in-progress/` and `deprecated/` ship no docs page.
+Every skill in a promoted bucket (`wordpress/`, `browser/`, `git/`, `portfolio/`) has a human-facing **docs page** at `docs/<bucket>/<skill-name>.md` — the docs tree mirrors the promoted bucket folders under `skills/`. The page is not the skill and not a copy of `SKILL.md`. Skills in `in-progress/` and `deprecated/` ship no docs page.
 
 The job of a docs page is to orient one reader around one skill so they can hold it in their head, know when to reach for it, what to have ready before they do, and what they get back. The top-level `README.md` is the index; each docs page is a node.
 

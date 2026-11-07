@@ -3,10 +3,11 @@ Skills are organized into bucket folders under `skills/`:
 - `wordpress/` — WordPress plugin work: user docs, per-worktree dev sites
 - `browser/` — run a feature in a real browser and turn the run into a deliverable (walkthrough page, video)
 - `git/` — move a branch through git and GitHub (commit, push, PR, merge, clean up)
+- `portfolio/` — turn a project's history into something you can show (case studies)
 - `in-progress/` — drafts not yet ready to ship (create when needed)
 - `deprecated/` — no longer used (create when needed)
 
-Every skill in `wordpress/`, `browser/` or `git/` (the **promoted** buckets) must have a reference in the top-level `README.md` and an entry in `.claude-plugin/plugin.json`'s `skills` array (the Claude Code plugin ships exactly the promoted set). Skills in `in-progress/` and `deprecated/` must not appear in either.
+Every skill in `wordpress/`, `browser/`, `git/` or `portfolio/` (the **promoted** buckets) must have a reference in the top-level `README.md` and an entry in `.claude-plugin/plugin.json`'s `skills` array (the Claude Code plugin ships exactly the promoted set). Skills in `in-progress/` and `deprecated/` must not appear in either.
 
 The repo is also its own single-plugin Claude Code marketplace: `.claude-plugin/marketplace.json` lists the one `aiarnob-skills` plugin. Releases go through changesets: every user-visible change gets a `.changeset/*.md`, and the release workflow opens a version PR. `.claude-plugin/plugin.json`'s `version` must equal `package.json`'s — Claude uses the plugin `version` to decide when installed users see an update — and `npm run version` (which the release workflow runs) copies it across with `scripts/sync-plugin-version.mjs` after `changeset version`. The repo setting "Allow GitHub Actions to create and approve pull requests" must stay on, or the workflow cannot open the version PR. Run `claude plugin validate . --strict` after touching either manifest. Why one plugin with bucketed skills, rather than one plugin per skill, lives in [.agents/adr/0001-single-plugin-with-bucketed-skills.md](./.agents/adr/0001-single-plugin-with-bucketed-skills.md).
 

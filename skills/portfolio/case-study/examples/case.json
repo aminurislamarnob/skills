@@ -1,0 +1,212 @@
+{
+  "title": "Example Booking Launch",
+  "lang": "en",
+  "eyebrow": "Case study · Example (fictional data)",
+  "headline": "A week from a static mock-up to live bookings",
+  "lede": "This is a fictional example of the format. Replace every line with the real project: what it is, your role, your share of the commits (here **131 of 214**), and where it can be seen.",
+  "facts": [
+    [
+      "My role",
+      "Team lead and developer"
+    ],
+    [
+      "Team",
+      "4 engineers, 2 repositories"
+    ],
+    [
+      "Window",
+      "2 to 9 Mar 2026"
+    ],
+    [
+      "Launch",
+      "9 Mar, 10 AM"
+    ],
+    [
+      "Stack",
+      "Next.js, PHP, Playwright"
+    ]
+  ],
+  "sections": [
+    {
+      "rail": "The week",
+      "when": "2 to 9 Mar",
+      "heading": "What the week looked like",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "One paragraph that reads the chart: who carried which stretch, and what changed day to day."
+        },
+        {
+          "type": "chart",
+          "me_label": "My commits",
+          "team_label": "Team commits",
+          "caption": "Each column is one day of non-merge commits on `main` in both repositories."
+        },
+        {
+          "type": "totals",
+          "items": [
+            [
+              "131 of 214",
+              "commits"
+            ],
+            [
+              "18 of 27",
+              "merged pull requests"
+            ],
+            [
+              "4 of 6",
+              "decisions written"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rail": "The brief",
+      "when": "before 2 Mar",
+      "heading": "The brief",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "What had to be true: the users, the constraints, the non-negotiables, each from the spec or the client."
+        }
+      ]
+    },
+    {
+      "rail": "Day one",
+      "when": "2 Mar",
+      "heading": "Day one: the booking flow end to end",
+      "blocks": [
+        {
+          "type": "log",
+          "rows": [
+            [
+              "09:10",
+              "Repository and preview deploys"
+            ],
+            [
+              "13:40",
+              "Calendar reads real availability"
+            ],
+            [
+              "18:05",
+              "Booking placed and confirmed by email"
+            ]
+          ]
+        },
+        {
+          "type": "defs",
+          "items": [
+            [
+              "Double bookings",
+              "A slot is held for ten minutes while the visitor pays, then released."
+            ],
+            [
+              "Time zones",
+              "Every time renders in the venue's zone."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rail": "Speed",
+      "when": "6 Mar",
+      "heading": "Speed: the calendar stops waiting",
+      "blocks": [
+        {
+          "type": "ranges",
+          "max": 4,
+          "unit": "s",
+          "rows": [
+            {
+              "label": "Calendar on screen",
+              "text": "2.4–3.1 s → 0.2–0.3 s",
+              "before": [
+                2.4,
+                3.1
+              ],
+              "after": [
+                0.2,
+                0.3
+              ]
+            },
+            {
+              "label": "Booking confirmed",
+              "text": "about 1.8 s → about 0.9 s",
+              "before": [
+                1.8,
+                1.8
+              ],
+              "after": [
+                0.9,
+                0.9
+              ]
+            }
+          ],
+          "caption": "Say where each number was measured and what it does not cover."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Rule",
+            "What it prevents"
+          ],
+          "rows": [
+            [
+              "One slot, one booking",
+              "Two visitors paying for the same slot."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rail": "Leading it",
+      "heading": "Running the team",
+      "blocks": [
+        {
+          "type": "split",
+          "left": {
+            "title": "What I built",
+            "items": [
+              "The booking flow",
+              "The payment hold"
+            ]
+          },
+          "right": {
+            "title": "What the team built",
+            "items": [
+              "Email templates",
+              "The admin calendar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rail": "At launch",
+      "when": "9 Mar",
+      "heading": "What launched",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "**Bookings in under a second,** confirmed by email.",
+            "**A safety net:** 120 browser tests."
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "heading": "Where the numbers come from",
+    "text": "Commit counts are non-merge commits on `main` of both repositories, 2 to 9 March 2026. This page is a fictional example of the format.",
+    "stack": [
+      "Next.js",
+      "PHP",
+      "Playwright"
+    ],
+    "byline": "Jane Doe, team lead at Example Co."
+  }
+}
