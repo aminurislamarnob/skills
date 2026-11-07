@@ -1,7 +1,7 @@
 {
   "name": "aiarnob-skills",
   "version": "1.2.0",
-  "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos, and a one-command ship (commit, push, PR, merge, clean up).",
+  "description": "Aminur Islam's agent skills for WordPress plugin work — client docs with real screenshots, one Herd site per git worktree, browser walkthroughs and narrated feature videos, a one-command ship (commit, push, PR, merge, clean up), and portfolio case studies written from your own commits.",
   "author": {
     "name": "Aminur Islam",
     "url": "https://github.com/aminurislamarnob"
@@ -20,7 +20,9 @@
     "qa",
     "video",
     "git",
-    "pull-request"
+    "pull-request",
+    "portfolio",
+    "case-study"
   ],
   "skills": [
     "./skills/wordpress/setup-aiarnob-skills",
@@ -28,6 +30,7 @@
     "./skills/wordpress/wp-worktree",
     "./skills/browser/browser-walkthrough",
     "./skills/browser/feature-video",
-    "./skills/git/ship-branch"
+    "./skills/git/ship-branch",
+    "./skills/portfolio/case-study"
   ]
 }

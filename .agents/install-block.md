@@ -82,9 +82,10 @@ Gemini doesn't read `.claude-plugin`, and `--path` takes one folder. One install
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/wordpress
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/browser
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/git
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/portfolio
 ```
 
-Re-run all three commands to update.
+Re-run all four commands to update.
 
 </canonical-block>
 

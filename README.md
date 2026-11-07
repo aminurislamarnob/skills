@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/aminurislamarnob/skills)](https://skills.sh/aminurislamarnob/skills)
 
-Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, proof that a change works in a real browser, as a walkthrough page or a narrated video, and a one-command ship that commits, pushes, opens the PR, merges it and cleans up the branch.
+Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, proof that a change works in a real browser, as a walkthrough page or a narrated video, a one-command ship that commits, pushes, opens the PR, merges it and cleans up the branch, and a portfolio case study written from your own commits.
 
 They are small, composable, and install as a plugin in Claude Code, Codex and GitHub Copilot, as skills in Gemini CLI, and through [skills.sh](https://skills.sh) in any other harness that reads the Agent Skills format. Hack on them and make them your own.
 
@@ -82,9 +82,10 @@ In VS Code, run **Chat: Install Plugin From Source** and enter `https://github.c
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/wordpress
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/browser
 gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/git
+gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/portfolio
 ```
 
-Re-run all three commands to update.
+Re-run all four commands to update.
 
 </details>
 
@@ -109,7 +110,7 @@ In your agent, run it once per repo. It will:
 
 ### 3. Bam - you're ready to go.
 
-Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`, `/ship-branch`).
+Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`, `/ship-branch`, `/case-study`).
 
 ## Why these skills exist
 
@@ -130,6 +131,10 @@ A diff is not evidence that a feature works. [`browser-walkthrough`](./skills/br
 ### Five commands to land a branch
 
 Commit, push, open the PR, merge, delete the branch here and on GitHub: the same sequence every time, and easy to leave half done. [`ship-branch`](./skills/git/ship-branch/SKILL.md) runs it as one command, writes the commit and PR text from the diff, skips every step that has already happened, and stops without forcing anything when GitHub wants checks or a review first.
+
+### Nobody remembers what you shipped
+
+Months of work end up as a few lines on a CV. [`case-study`](./skills/portfolio/case-study/SKILL.md) counts your commits across a project's repositories against the team's, reads every one of them, and writes a portfolio page as a dated engineering log: a commit chart, the brief, the architecture, one section per stretch of work, before/after numbers, and what you built next to what the team built. Every claim traces to a commit, a PR or a decision record. Its scripts do the counting and building, so it works in any agent, and Claude publishes the result as a private Artifact.
 
 ## Reference
 
@@ -164,6 +169,14 @@ Skills for moving a branch through git and GitHub. Bucket: [`skills/git`](./skil
 **User-invoked**
 
 - **[ship-branch](./skills/git/ship-branch/SKILL.md)** — Commit the current work, push, open a pull request, merge it, and delete the branch locally and on the remote. Each step is skipped when already done, so it is safe to re-run. [Docs](./docs/git/ship-branch.md)
+
+### Portfolio
+
+Skills that turn a project's history into something you can show. Bucket: [`skills/portfolio`](./skills/portfolio/README.md).
+
+**Model-invoked**
+
+- **[case-study](./skills/portfolio/case-study/SKILL.md)** — Write a portfolio case study of your part in a project from your own git commits across its repositories, as a single-page HTML artifact with a commit chart, diagrams and before/after numbers. Works in any agent; publishes as a Claude Artifact or a standalone page. [Docs](./docs/portfolio/case-study.md)
 
 ## Contributing
 
