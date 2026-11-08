@@ -1,5 +1,13 @@
 # aiarnob-skills
 
+## 1.3.0
+
+### Minor Changes
+
+- [#3](https://github.com/aminurislamarnob/skills/pull/3) [`c48de63`](https://github.com/aminurislamarnob/skills/commit/c48de631dd892e96aceac5af757c4df293723991) Thanks [@aminurislamarnob](https://github.com/aminurislamarnob)! - Add **`case-study`**, a model-invoked skill in a new **`portfolio`** bucket. It writes a portfolio case study of your part in a project from your own git commits across one or more repositories, as a single HTML page: a hero with screenshots, a commit chart of your work against the team's, the brief, architecture and flow diagrams, before/after numbers, what you built next to what the team built, and a footer that says where every number came from. The counting (`git_stats.py`), screenshots (`shoot.mjs`) and page building (`build_page.py`) are bundled scripts, so it works the same in any agent. Claude publishes the page as a private Artifact, and other agents get a standalone HTML file. Gemini CLI users add a fourth install: `gemini skills install https://github.com/aminurislamarnob/skills.git --path skills/portfolio`.
+
+- [`f9ec9f0`](https://github.com/aminurislamarnob/skills/commit/f9ec9f0603db444ce660be1d71c174290e9798a0) Thanks [@aminurislamarnob](https://github.com/aminurislamarnob)! - Add **`interactive-case-study`**, a model-invoked skill in the **`portfolio`** bucket. It writes a compact portfolio case study that a visitor clicks through: a hero with the live site, a phone screenshot and four count-up figures, a facts row, and at most six sections, each led by something to click. Those are a commit timeline whose bars say what shipped, an architecture diagram whose zones light up, a sticky deck of key decisions (log, was → now, table or image), a before/after switch over a gauge, a screens lightbox, and a square per commit showing who built it. Details fold into collapsed rows. `build_page.py --check` enforces the compact rules (at most six sections, two sentences per block, no commit hashes, PR numbers or dates in the copy), and the builder writes one dependency-free page that follows light and dark, works at phone width and respects reduced motion. Claude publishes it as a private Artifact, other agents get a standalone HTML file, and `references/porting.md` shows how to move it into your own site as a component.
+
 ## 1.2.0
 
 ### Minor Changes
