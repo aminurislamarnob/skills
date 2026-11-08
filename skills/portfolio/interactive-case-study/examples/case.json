@@ -1,0 +1,141 @@
+{
+  "title": "Harbor Docs case study",
+  "lang": "en",
+  "kicker": "Harbor Docs · Case study",
+  "headline": "A docs site that answers in **under a second,** *rebuilt in nine days.*",
+  "lede": "Harbor is a fictional open-source queue. I rebuilt its docs and marketing site as static pages with search that needs no server, and moved every old URL across.",
+  "back": {"label": "Portfolio", "href": "https://example.com/portfolio"},
+  "live": {"label": "Live at harbor.example", "href": "https://harbor.example"},
+  "pill": "Gatsby → Astro",
+  "actions": [
+    {"label": "Visit harbor.example", "href": "https://harbor.example", "primary": true},
+    {"label": "Hire me", "href": "mailto:jane@example.com"}
+  ],
+  "hero": {
+    "desktop": {"src": "img/home-desktop.svg", "w": 1440, "h": 900, "alt": "The Harbor Docs home page on a desktop.", "url": "harbor.example", "caption": "Home page"},
+    "phone": {"src": "img/home-phone.svg", "w": 600, "h": 1299, "alt": "The Harbor Docs home page on a phone.", "caption": "Home page on a phone"},
+    "chips": [
+      {"mark": "ok", "text": "Search with no server"},
+      {"mark": "check", "text": "100 accessibility"},
+      {"text": "Mobile LCP **0.9 s**"}
+    ]
+  },
+  "kpis": [
+    {"label": "Days to launch", "value": 9, "icon": "calendar-days"},
+    {"label": "My commits", "value": 131, "icon": "git-commit-horizontal"},
+    {"label": "Docs pages", "value": 42, "icon": "book-open"},
+    {"label": "Mobile score", "value": 98, "icon": "gauge"}
+  ],
+  "facts": [
+    {"label": "My role", "value": "Lead developer, with Claude Code as pair", "icon": "user"},
+    {"label": "Team", "value": "Me and one designer", "icon": "users"},
+    {"label": "Timeline", "value": "Nine days, one sprint", "icon": "rocket"},
+    {"label": "Stack", "value": "Astro, Pagefind, Cloudflare Pages", "icon": "layers"}
+  ],
+  "sections": [
+    {
+      "type": "timeline",
+      "heading": "131 commits, **nine days.**",
+      "hint": "Pick a day to see what shipped.",
+      "from_stats": true,
+      "legend": ["Mine", "The designer's"],
+      "notes": {
+        "2026-03-02": "The Astro skeleton, the layout and the first ten pages moved across.",
+        "2026-03-03": "Every reference page moved, with redirects for the old URLs.",
+        "2026-03-04": "Search: Pagefind indexes the build, and a ⌘K palette opens it.",
+        "2026-03-05": "The designer's new home page, built as static sections.",
+        "2026-03-06": "Performance: fonts subset, images resized, no blocking scripts.",
+        "2026-03-07": "Dark mode, and the theme set before the first paint.",
+        "2026-03-08": "Accessibility pass: focus states, contrast, skip links.",
+        "2026-03-09": "Launch day: the redirect map checked against the old sitemap."
+      },
+      "footnote": "Non-merge commits on the main branch. Commit counts measure activity, not effort."
+    },
+    {
+      "type": "architecture",
+      "heading": "Static pages, **search in the browser.**",
+      "goals": ["No server to run", "Every old URL still works", "Search with no service", "Light and dark, no flash"],
+      "zones": [
+        {"title": "Build", "label": "Build · npm run build", "body": "Markdown compiles to static HTML, then Pagefind indexes the built pages. One command, nothing to keep running.",
+         "boxes": [["Markdown content", "docs/*.md"], ["Astro static build", "HTML, no hydration"], ["Pagefind indexer", "index of /docs"]]},
+        {"title": "Edge", "label": "Cloudflare Pages", "body": "The host serves the pages, the search index and a redirect map of every old Gatsby URL.",
+         "boxes": [["Static pages", "cached at the edge"], ["Redirect map", "old URL → new URL"], ["Search index", "Pagefind files"]]},
+        {"title": "Browser", "label": "Browser", "body": "Pages arrive as plain HTML. Only the search palette loads JavaScript, and only when it opens.",
+         "boxes": [["Static document", "no framework"], ["Search palette", "loads on ⌘K"]]}
+      ],
+      "links": ["dist/", "HTTP"],
+      "aria": "Markdown builds to static HTML and a Pagefind index, Cloudflare Pages serves them with a redirect map, and the browser loads JavaScript only for the search palette."
+    },
+    {
+      "type": "decisions",
+      "heading": "Three calls **that shaped the rebuild.**",
+      "cards": [
+        {"tab": "Gatsby → Astro", "when": "The pivot", "title": "From a React app to static pages",
+         "body": "Every page shipped React to show text. Astro renders the same Markdown to plain HTML, so the pages arrive finished.",
+         "tag": "Astro · Markdown",
+         "visual": {"pivot": {"was": "Gatsby", "now": "Astro", "arrow": "Moved in four days ↓",
+           "was_items": ["React on every page", "GraphQL layer for Markdown", "Plugin for search"],
+           "now_items": ["Plain HTML pages", "Content collections", "Pagefind, no service"]}}},
+        {"tab": "Redirects", "when": "Old links", "title": "Every old URL lands somewhere",
+         "body": "The old sitemap became a redirect map, checked by a script on every build so a renamed page can't break a link.",
+         "tag": "Redirect map · build check",
+         "visual": {"log": {"title": "redirects", "rows": [["Map", "Old sitemap read"], ["Match", "Old URL → new page"], ["Check", "Build fails on a miss"]], "ok": "✓ every old URL redirects"}}},
+        {"tab": "Search", "when": "Finding things", "title": "Search that needs no server",
+         "body": "Pagefind indexes the built pages, and the palette loads its index only when a reader presses ⌘K.",
+         "tag": "Pagefind · ⌘K",
+         "visual": {"table": {"head": ["Action", "Loads", "When"], "rows": [["Open a page", "HTML only", "Always"], ["Press ⌘K", "Palette and index", "On demand"]], "mono": [1]}}}
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "Fonts that cost **a second.**",
+      "text": "Three font families and an unsized hero image held mobile PageSpeed back. Flip the switch to see what changed.",
+      "gauge": {"label": "Mobile PageSpeed", "before": 61, "after": 98},
+      "fixes": [
+        {"label": "Fonts", "before": "3 families", "after": "1 subset", "before_note": "Blocking the first paint", "after_note": "One variable font, preloaded"},
+        {"label": "Layout shift", "before": "0.21", "after": "0", "before_note": "The hero image had no size", "after_note": "Width and height on every image"}
+      ],
+      "metrics": {"head": "Mobile PageSpeed, after", "items": [["98", "Performance"], ["0.9 s", "LCP"], ["0", "CLS"]]},
+      "footnote": "PageSpeed Insights, emulated mobile on slow 4G, on the home page."
+    },
+    {
+      "type": "screens",
+      "heading": "harbor.example, **on every screen.**",
+      "cards": [
+        {"src": "img/home-desktop.svg", "w": 1440, "h": 900, "alt": "The home page on a desktop.", "caption": "Home page", "tag": "Desktop"},
+        {"src": "img/home-phone.svg", "w": 600, "h": 1299, "alt": "The home page on a phone.", "caption": "Home page", "tag": "Phone"},
+        {"src": "img/docs-desktop.svg", "w": 1440, "h": 900, "alt": "A docs page with the sidebar.", "caption": "Docs", "tag": "Desktop"}
+      ],
+      "more": [{"full": "img/docs-desktop.svg", "caption": "Search palette"}],
+      "text": "Home, docs and search, as full pages."
+    },
+    {
+      "type": "behind",
+      "heading": "One developer, **Claude Code as pair.**",
+      "pair": {"value": 118, "total": 131, "text": "commits carry a Claude co-author trailer. The repo's AGENTS.md holds the rules it follows.",
+               "value_label": "With Claude Code", "rest_label": "Solo",
+               "left": {"label": "I directed", "text": "The move to Astro, the redirect rules and the performance budget."},
+               "right": {"label": "Claude drafted", "text": "The redirect check, the page templates and the first pass of each page."}},
+      "faq": [
+        ["Crawlers and AI readers", "Each docs page has a plain .md twin, and llms.txt lists them."],
+        ["Theme before paint", "An inline script sets the theme before the first paint, so dark mode never flashes."]
+      ],
+      "stack": ["Astro", "TypeScript", "Pagefind", "Cloudflare Pages", "Claude Code", {"name": "Harbor CLI", "color": ["#0b7a75", "#4fd1c5"]}],
+      "footnote": "Claude Code commits were made in my sessions and count as mine."
+    }
+  ],
+  "next": {
+    "href": "https://example.com/portfolio/harbor-dashboard",
+    "kicker": "Vue · Laravel",
+    "title": "Harbor Dashboard",
+    "summary": "The queue's admin, rebuilt so a stuck job shows itself.",
+    "img": {"src": "img/docs-desktop.svg", "w": 1440, "h": 900, "alt": "The Harbor Dashboard."},
+    "all": {"label": "All projects →", "href": "https://example.com/portfolio"}
+  },
+  "cta": {
+    "heading": "Need docs that **load before you blink?**",
+    "text": "I build fast static sites for open-source projects and their companies.",
+    "action": {"label": "Hire me", "href": "mailto:jane@example.com"}
+  },
+  "sources": "Commits: git_stats.py on the main branch, 2 to 9 March, Asia/Dhaka time, merges left out. PageSpeed: Insights on the home page before and after launch. All names and figures on this example page are fictional."
+}

@@ -18,7 +18,7 @@ Only your commits count as yours, and every claim on the page traces to a source
 
 Type `/case-study`, or the agent reaches for it automatically when asked to write a case study, a portfolio page or a project write-up from git history, or to make another page like an existing case study.
 
-Reach for it when you want a page you can link from a portfolio or send to a client. It isn't for proving a single change works. For that, use [browser-walkthrough](../browser/browser-walkthrough.md).
+Reach for it when you want a page you can link from a portfolio or send to a client. It isn't for proving a single change works. For that, use [browser-walkthrough](../browser/browser-walkthrough.md). For a compact page a visitor clicks through in a minute, use [interactive-case-study](./interactive-case-study.md).
 
 ## Before you start
 

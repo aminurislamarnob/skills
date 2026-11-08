@@ -2,7 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/aminurislamarnob/skills)](https://skills.sh/aminurislamarnob/skills)
 
-Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, proof that a change works in a real browser, as a walkthrough page or a narrated video, a one-command ship that commits, pushes, opens the PR, merges it and cleans up the branch, and a portfolio case study written from your own commits.
+Agent skills I use when building and shipping WordPress plugins: client-facing docs with real screenshots, one isolated Herd site per git worktree, proof that a change works in a real browser, as a walkthrough page or a narrated video, a one-command ship that commits, pushes, opens the PR, merges it and cleans up the branch, and portfolio case studies written from your own commits, as a long engineering log or a compact page you click through.
 
 They are small, composable, and install as a plugin in Claude Code, Codex and GitHub Copilot, as skills in Gemini CLI, and through [skills.sh](https://skills.sh) in any other harness that reads the Agent Skills format. Hack on them and make them your own.
 
@@ -110,7 +110,7 @@ In your agent, run it once per repo. It will:
 
 ### 3. Bam - you're ready to go.
 
-Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`, `/ship-branch`, `/case-study`).
+Ask your agent in plain words ("write the user docs for this plugin"), or type a skill's name as a slash command (`/plugin-docs`, `/wp-worktree`, `/browser-walkthrough`, `/feature-video`, `/ship-branch`, `/case-study`, `/interactive-case-study`).
 
 ## Why these skills exist
 
@@ -135,6 +135,8 @@ Commit, push, open the PR, merge, delete the branch here and on GitHub: the same
 ### Nobody remembers what you shipped
 
 Months of work end up as a few lines on a CV. [`case-study`](./skills/portfolio/case-study/SKILL.md) counts your commits across a project's repositories against the team's, reads every one of them, and writes a portfolio page as a dated engineering log: a commit chart, the brief, the architecture, one section per stretch of work, before/after numbers, and what you built next to what the team built. Every claim traces to a commit, a PR or a decision record. Its scripts do the counting and building, so it works in any agent, and Claude publishes the result as a private Artifact.
+
+Most visitors give a portfolio page a minute, though. [`interactive-case-study`](./skills/portfolio/interactive-case-study/SKILL.md) writes the compact version: a hero with four figures, then at most six sections, each led by something to click (a commit timeline, an architecture diagram with zones that light up, a sticky deck of key decisions, a before/after switch, a screens lightbox, who built what), with the details folded into collapsed rows. It builds one dependency-free page that follows light and dark, and shows how to port the same page into your own site.
 
 ## Reference
 
@@ -177,6 +179,7 @@ Skills that turn a project's history into something you can show. Bucket: [`skil
 **Model-invoked**
 
 - **[case-study](./skills/portfolio/case-study/SKILL.md)** — Write a portfolio case study of your part in a project from your own git commits across its repositories, as a single-page HTML artifact with a commit chart, diagrams and before/after numbers. Works in any agent; publishes as a Claude Artifact or a standalone page. [Docs](./docs/portfolio/case-study.md)
+- **[interactive-case-study](./skills/portfolio/interactive-case-study/SKILL.md)** — Write a compact, interactive case study: at most six sections, each led by something to click (commit timeline, clickable architecture, sticky decision deck, before/after switch, screens lightbox), details in collapsed rows. One dependency-free page for any agent or host, or a guide to port it into your site. [Docs](./docs/portfolio/interactive-case-study.md)
 
 ## Contributing
 

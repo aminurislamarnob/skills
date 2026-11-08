@@ -38,6 +38,10 @@ The agreed list of docs pages, one per user-visible feature area, settled with t
 **Case study** (`case-study`):
 A portfolio page about one person's part in one project, built from their own commits and laid out as a dated engineering log, with a commit chart against the team's and a footer that says where every number came from. Only their commits count as theirs; every claim traces to a source.
 
+**Interactive case study** (`interactive-case-study`):
+The compact sibling of a case study: one project on one page that a visitor skims in a minute, with a hero of four figures and at most six sections, each led by something to click (timeline, architecture zones, decision deck, before/after switch, screens, who built it). Details live in collapsed rows; commit hashes, PR numbers and dates stay out of the copy and only the sources footer cites them.
+_Avoid_: dashboard, landing page
+
 **Worktree site** (`wp-worktree`):
 The isolated Herd site, `https://<site>--<worktree>.test`, with its own cloned database, that backs one git worktree.
 
